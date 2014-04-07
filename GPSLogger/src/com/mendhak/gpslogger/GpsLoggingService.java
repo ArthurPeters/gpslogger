@@ -390,7 +390,7 @@ public class GpsLoggingService extends Service implements IActionListener
         Utilities.LogInfo("Starting logging procedures");
         try
         {
-            startForeground(NOTIFICATION_ID, null);
+            startForeground(NOTIFICATION_ID, new Notification());
         }
         catch (Exception ex)
         {
@@ -447,17 +447,17 @@ public class GpsLoggingService extends Service implements IActionListener
     private void Notify()
     {
 
-        Utilities.LogDebug("GpsLoggingService.Notify");
-        if (AppSettings.shouldShowInNotificationBar())
-        {
+//        Utilities.LogDebug("GpsLoggingService.Notify");
+//        if (AppSettings.shouldShowInNotificationBar())
+//        {
             gpsNotifyManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 
             ShowNotification();
-        }
-        else
-        {
-            RemoveNotification();
-        }
+//        }
+//        else
+//        {
+//            RemoveNotification();
+//        }
     }
 
     /**
